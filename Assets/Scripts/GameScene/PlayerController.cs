@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
             Cursor.lockState = CursorLockMode.None; //unlocks the cursor from the middle of the screen
             Cursor.visible = true; //reveals the cursor
         }
-        else
+        else if (Input.GetKeyUp(KeyCode.Z))
         {
             Cursor.lockState = CursorLockMode.Locked; //locks the cursor to the middle of the screen
             Cursor.visible = false; //hides the cursor 
@@ -125,6 +125,14 @@ public class PlayerController : MonoBehaviour
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit); //limits the angle of view
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+        }
+        if (Time.timeScale == 0)
+        {
+            canMove = false;
+        }
+        else
+        {
+            canMove = true;
         }
     }
 }
