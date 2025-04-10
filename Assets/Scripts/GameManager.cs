@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,8 +10,8 @@ public class GameManager : MonoBehaviour
     public int questID = 0; //this identifies what quest is currently active
 
     [Header("UI Related")]
-    public Text TextMonologue;
-    public Text TextQuest;
+    public TextMeshProUGUI TextMonologue;
+    public TextMeshProUGUI TextQuest;
 
     void Start()
     {

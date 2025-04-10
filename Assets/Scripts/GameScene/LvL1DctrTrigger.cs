@@ -15,7 +15,7 @@ public class LvL1DctrTrigger : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && GameManager.questID == 1)
+        if (other.gameObject.CompareTag("Player") && gameManager.questID == 1)
         {
             InteractMonologue.text = "Press [F] to interact";
         }
@@ -23,7 +23,7 @@ public class LvL1DctrTrigger : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && GameManager.questID == 1)
+        if (other.gameObject.CompareTag("Player") && gameManager.questID == 1)
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
@@ -31,6 +31,14 @@ public class LvL1DctrTrigger : MonoBehaviour
                 interactionBlockerObject.SetActive(false);
                 InteractMonologue.text = "";
             }
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            InteractMonologue.text = "";
         }
     }
 }
