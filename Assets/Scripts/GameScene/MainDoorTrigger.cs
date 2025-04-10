@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class MainDoorTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject door;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "Player")
+        {
+            door.SetActive(false);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        
+        if (other.tag == "Player")
+        {
+            door.SetActive(true);
+        }
     }
 }
