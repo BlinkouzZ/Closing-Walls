@@ -7,7 +7,7 @@ public class MenuNavigation : MonoBehaviour
 {
     public void BtnStart()
     {
-        SceneManager.LoadScene("SampleScene");//this will load the specified level
+        SceneManager.LoadScene("Start");//this will load the specified level
     }
 
     public void BtnQuit()
