@@ -19,6 +19,6 @@ public class Trigger_DeathWall : MonoBehaviour
     }
     void Update()
     {
-        transform.Translate(0, -10f * Time.deltaTime, 0);
+        transform.Translate(0, -0.5f * Time.deltaTime, 0);
     }
 }

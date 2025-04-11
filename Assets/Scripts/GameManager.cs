@@ -20,12 +20,18 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+       
+    }
+
+    public void changeQuestID ()
+    {
+        TextQuest.gameObject.SetActive(true);
         switch (questID)
         {
-            case 0:
+            case 1:
                 TextQuest.text = "Who's that?";
                 break;
-            case 1:
+            case 2:
                 TextQuest.text = "I guess I'll do that.";
                 break;
             default:

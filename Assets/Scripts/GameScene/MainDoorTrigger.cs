@@ -8,7 +8,7 @@ public class MainDoorTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             door.SetActive(false);
         }
@@ -16,7 +16,7 @@ public class MainDoorTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             door.SetActive(true);
         }
